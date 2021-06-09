@@ -6,10 +6,13 @@
     margin: 0px 0px 0px 30px;
 }
 
+/* lista total */
 .movieRow--listarea {
-    overflow-x: hidden;
+    overflow-x: hidden; /* tudo o que passar da tela na horizontal será cortado */
+    padding-left: 30px;
 }
 
+/* coloca os itens ao lado do outro passando a tela */
 .movieRow--list {
     width: 9999999999px;
 }
@@ -17,5 +20,17 @@
 /* coloca os itens um ao lado do outro */
 .movieRow--item {
     display: inline-block;
+    width: 150px;
+    cursor: pointer;
 }
 
+.movieRow--item img {
+    width: 100%;
+    transform: scale(0.9);
+    transition: all ease 0.2s;
+}
+
+/* aumenta a escala da imagem ao descansar o cursos em cima do cartaz do filme */
+.movieRow--item img:hover {
+    transform: scale(1);
+}
