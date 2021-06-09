@@ -1,0 +1,21 @@
+.movieRow {
+    margin-bottom: 30px;
+}
+
+.movieRow h2 {
+    margin: 0px 0px 0px 30px;
+}
+
+.movieRow--listarea {
+    overflow-x: hidden;
+}
+
+.movieRow--list {
+    width: 9999999999px;
+}
+
+/* coloca os itens um ao lado do outro */
+.movieRow--item {
+    display: inline-block;
+}
+

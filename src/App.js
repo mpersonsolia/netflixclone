@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'; //useEffect: executa o código adicionado.
-import './App.css'
+import './App.css';
 import Tmdb from './Tmdb';
 import MovieRow from './components/MovieRow';
 
 export default () => {
+  
   const [movieList, setMovieList] = useState([]);
 
   useEffect(() => {
-    const loadAll = async () => { // pega a lista total
+    const loadAll = async () => { 
       let list = await Tmdb.getHomeList();
       setMovieList(list);
     }
