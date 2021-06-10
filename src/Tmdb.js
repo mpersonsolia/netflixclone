@@ -1,7 +1,7 @@
 const API_KEY = '18db9734571bc5dd208d012d5407608b';
 const API_BASE = 'https://api.themoviedb.org/3';
 
-//a função realiza a requisição externa e retorna o json, como resposta.
+//a função realiza a requisição externa e retorna o json, como resposta
 const basicFetch = async (endpoint) => {
     const req = await fetch(`${API_BASE}${endpoint}`);
     const json = await req.json();
@@ -54,7 +54,7 @@ export default {
             },
         ]
     },
-    
+
     getMovieInfo: async (movieId, type) => {
         let info = {};
 
@@ -69,12 +69,8 @@ export default {
                     default:
                         info = null;
                     break;
-
                 }
-            }
-        
-        
-
+            } 
         return info;
     }
 }

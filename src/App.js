@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'; //useEffect: executa o código adicionado.
 import './App.css';
 import Tmdb from './Tmdb';
-import MovieRow from './components/MovieRow';
-import FeaturedMovie from './components/FeaturedMovie'
+import MovieRow from './components/MovieRow/movieRow';
+import FeaturedMovie from './components/FeaturedMovie/featuredMovie';
+import Header from './components/Header/header';
 
 export default () => {
   
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
+  const [blackHeader, setBlackHeader] = useState(false);
 
 
   useEffect(() => {
@@ -26,9 +28,25 @@ export default () => {
     loadAll();
   }, []);
 
+  // monitoramento da página em relação à cor do header (preto ou transparente)
+  useEffect(() => {
+    const scrollListener = () => {
+
+    }
+
+    window.addEventListener('scroll', scrollListener);
+
+    return () => {
+      window.removeEventListener('scroll', scrollListener);
+    }
+
+  }, []);
+
   // página inicial (page): header, destaque (featured movie), listas (lists) e rodapé
   return (
     <div className = "page">
+
+      <Header black = {blackHeader}/>
 
       {featuredData && 
         <FeaturedMovie item = {featuredData} /> 
