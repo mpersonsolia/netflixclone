@@ -4,6 +4,7 @@ import Tmdb from './Tmdb';
 import MovieRow from './components/MovieRow/movieRow';
 import FeaturedMovie from './components/FeaturedMovie/featuredMovie';
 import Header from './components/Header/header';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 
 export default () => {
   
@@ -19,7 +20,7 @@ export default () => {
 
       // pegando o filme em destaque (featured) de forma aleatória
       let originals = list.filter(i => i.slug === 'originals');
-      let randomChosen = Math.floor(Math.random() * (originals[0].items.results.length - 1)) // como o array começa no zero, é preciso colocar o -1 da lista de items
+      let randomChosen = Math.floor(Math.random() * (originals[0].items.results.length - 1)); // como o array começa no zero, é preciso colocar o -1 da lista de items
       let chosen = originals[0].items.results[randomChosen];
       let chosenInfo = await Tmdb.getMovieInfo(chosen.id, 'tv');
       setFeaturedData(chosenInfo);
@@ -31,15 +32,17 @@ export default () => {
   // monitoramento da página em relação à cor do header (preto ou transparente)
   useEffect(() => {
     const scrollListener = () => {
-
+      if(window.scrollY > 10) {
+        setBlackHeader(true);
+      } else {
+        setBlackHeader(false);
+      }
     }
 
     window.addEventListener('scroll', scrollListener);
-
     return () => {
       window.removeEventListener('scroll', scrollListener);
     }
-
   }, []);
 
   // página inicial (page): header, destaque (featured movie), listas (lists) e rodapé
@@ -56,7 +59,13 @@ export default () => {
         {movieList.map((item, key) => (
           <MovieRow key = {key} title = {item.title} items = {item.items}/> // props
         ))}
-      </section>      
+      </section>
+
+      <footer>
+        Feito por Maria Paula Person Solia <FavoriteBorderIcon style = {{fontSize: 13}}/><br/>
+        Direitos de imagem para Netflix<br/>
+        Dados pegos do site Themoviedb.org<br/>
+      </footer>   
     </div>
   );
 }

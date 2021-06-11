@@ -12,9 +12,8 @@
     padding-left: 30px;
 }
 
-/* coloca os itens ao lado do outro passando a tela */
 .movieRow--list {
-    width: 9999999999px;
+    transition: all ease 0.5s;
 }
 
 /* coloca os itens um ao lado do outro */
@@ -33,4 +32,33 @@
 /* aumenta a escala da imagem ao descansar o cursos em cima do cartaz do filme */
 .movieRow--item img:hover {
     transform: scale(1);
+}
+
+.movieRow--left,
+.movieRow--right {
+    position: absolute;
+    width: 40px;
+    height: 225px;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: RGBA (0, 0, 0, 0.6);
+    cursor: pointer;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+
+.movieRow--left {
+    left: 0;
+}
+
+.movieRow--right {
+    right: 0;
+}
+
+.movieRow:hover .movieRow--left,
+.movieRow:hover .movieRow--right {
+    opacity: 1;
 }

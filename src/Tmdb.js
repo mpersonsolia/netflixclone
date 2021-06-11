@@ -48,7 +48,7 @@ export default {
                 items: await basicFetch (`/discover/movie?with_genres=10749&languange=pt-BR&api_key=${API_KEY}`)
             },
             {
-                slug: 'tdocumentary',
+                slug: 'documentary',
                 title: 'Documentário',
                 items: await basicFetch (`/discover/movie?with_genres=99&languange=pt-BR&api_key=${API_KEY}`)
             },
@@ -57,7 +57,6 @@ export default {
 
     getMovieInfo: async (movieId, type) => {
         let info = {};
-
             if(movieId) {
                 switch(type) {
                     case 'movie':

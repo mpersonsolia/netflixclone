@@ -1,5 +1,7 @@
 import React from 'react';
 import './featuredMovie.css';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import AddIcon from '@material-ui/icons/Add';
 
 export default ({item}) => {
 
@@ -29,8 +31,8 @@ export default ({item}) => {
                     <div className = "featured--description">{item.overview}</div>
 
                     <div className = "featured--buttons">
-                        <a href = {`/watch/${item.id}`} className = "featured--watchbutton">&#8227; Assistir</a>
-                        <a href = {`/list/add/${item.id}`} className = "featured--mylistbutton">+ Minha Lista</a>
+                        <a href = {`/watch/${item.id}`} className = "featured--watchbutton"><PlayArrowIcon style = {{fontSize: 20}}/> Assistir</a>
+                        <a href = {`/list/add/${item.id}`} className = "featured--mylistbutton"><AddIcon style = {{fontSize: 20}}/> Minha Lista</a>
                     </div>
 
                     <div className = "featured--genres"><strong>Gêneros:</strong> {genres.join(', ')}</div>
