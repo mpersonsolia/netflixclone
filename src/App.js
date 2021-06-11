@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'; //useEffect: executa o código adicionado.
+import React, { useEffect, useState } from 'react'; //useEffect: executa o código adicionado
 import './App.css';
 import Tmdb from './Tmdb';
 import MovieRow from './components/MovieRow/movieRow';
@@ -20,7 +20,7 @@ export default () => {
 
       // pegando o filme em destaque (featured) de forma aleatória
       let originals = list.filter(i => i.slug === 'originals');
-      let randomChosen = Math.floor(Math.random() * (originals[0].items.results.length - 1)); // como o array começa no zero, é preciso colocar o -1 da lista de items
+      let randomChosen = Math.floor(Math.random() * (originals[0].items.results.length - 1)); // como o array começa no zero, coloca-se o -1 da lista de items
       let chosen = originals[0].items.results[randomChosen];
       let chosenInfo = await Tmdb.getMovieInfo(chosen.id, 'tv');
       setFeaturedData(chosenInfo);
@@ -45,7 +45,7 @@ export default () => {
     }
   }, []);
 
-  // página inicial (page): header, destaque (featured movie), listas (lists) e rodapé
+  // página inicial (page): header, destaque (featured movie), listas (lists) e footer
   return (
     <div className = "page">
 

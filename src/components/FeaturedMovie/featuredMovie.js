@@ -1,3 +1,5 @@
+// filmes em destaque
+
 import React from 'react';
 import './featuredMovie.css';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
@@ -8,7 +10,7 @@ export default ({item}) => {
     //let firstDate = new Date(item.first_air_date);
  
     let genres = [];
-    for(let i in item.genres) {
+    for(let i in item.genres){
         genres.push ( item.genres[i].name )
     }
 
@@ -40,6 +42,5 @@ export default ({item}) => {
                 </div>
             </div>            
         </section>
-
     )
 }
