@@ -87,5 +87,32 @@
     color: #999;
 }
 
+/*configurações para tela de 760px - diminuição da descrição e botões*/
+@media (max-width: 760px) {
+    .featured {
+        height: 90vh;
+    }
+    
+    .featured--name {
+        font-size: 40px;
+    }
 
+    .features--info {
+        font-size: 16px;
+    }
 
+    .featured--description {
+        font-size: 14px;
+        max-width: 100%;
+        margin-right: 30px;
+    }
+
+    .featured--watchbutton,
+    .featured--mylistbutton {
+        font-size: 16px;
+    }
+
+    .featured--genres {
+        font-size: 14px;
+    }
+}

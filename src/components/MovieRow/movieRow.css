@@ -16,7 +16,7 @@
     transition: all ease 0.5s;
 }
 
-/* coloca os itens um ao lado do outro */
+/* itens um ao lado do outro */
 .movieRow--item {
     display: inline-block;
     width: 150px;
@@ -58,7 +58,16 @@
     right: 0;
 }
 
+/*opacidade das setas*/
 .movieRow:hover .movieRow--left,
 .movieRow:hover .movieRow--right {
     opacity: 1;
+}
+
+/*configurações para tela de 760px - retirada da opacidade das setas*/
+@media (max-width: 760px) {
+    .movieRow--left,
+    .movieRow--right {
+        opacity: 1;
+    } 
 }

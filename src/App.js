@@ -12,7 +12,6 @@ export default () => {
   const [featuredData, setFeaturedData] = useState(null);
   const [blackHeader, setBlackHeader] = useState(false);
 
-
   useEffect(() => {
     const loadAll = async () => { 
       let list = await Tmdb.getHomeList();
@@ -65,7 +64,11 @@ export default () => {
         Feito por Maria Paula Person Solia <FavoriteBorderIcon style = {{fontSize: 13}}/><br/>
         Direitos de imagem para Netflix<br/>
         Dados pegos do site Themoviedb.org<br/>
-      </footer>   
+      </footer>
+
+      {movieList.length <= 0 &&  
+      <div className = "loading"><img src = "loading.gif" alt = "Carregando"/></div>
+      }  
     </div>
   );
 }
